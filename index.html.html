@@ -83,3 +83,4 @@ function openAuth(){authMode='login';$('authModal').classList.add('on');updateAu
 sb.auth.onAuthStateChange(async(e,s)=>{user=s?.user||null;$('authBtn').textContent=user?'ログアウト':'ログイン';$('notifyBtn').style.display=user?'inline-block':'none';if(e==='PASSWORD_RECOVERY'){let np=prompt('新しいパスワードを6文字以上で入力してください');if(np&&np.length>=6){let u=await sb.auth.updateUser({password:np});toast(u.error?u.error.message:'パスワードを変更しました')}else if(np!==null){toast('6文字以上で入力してください')}}loadItems();if(user)loadNotifications()});
 sb.auth.getSession().then(({data})=>{user=data.session?.user||null;$('authBtn').textContent=user?'ログアウト':'ログイン';$('notifyBtn').style.display=user?'inline-block':'none';loadItems();if(user)loadNotifications()});
 </script></body></html>
+<!-- preview-test -->
