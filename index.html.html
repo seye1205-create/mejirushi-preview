@@ -84,3 +84,4 @@ sb.auth.onAuthStateChange(async(e,s)=>{user=s?.user||null;$('authBtn').textConte
 sb.auth.getSession().then(({data})=>{user=data.session?.user||null;$('authBtn').textContent=user?'ログアウト':'ログイン';$('notifyBtn').style.display=user?'inline-block':'none';loadItems();if(user)loadNotifications()});
 </script></body></html>
 <!-- preview-test -->
+<!-- production-deploy -->
